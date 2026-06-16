@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý sản phẩm</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Thanh điều hướng chính">
+        <div class="sidebar__brand">
+          <div class="brand-mark" aria-hidden="true">
+            <span class="brand-mark__top">LLA</span>
+            <span class="brand-mark__bottom">STORE</span>
+          </div>
+        </div>
+
+        <nav class="sidebar__nav">
+          <a class="nav-item" href="#">
+            <span class="nav-item__icon" aria-hidden="true"
+              ><svg viewBox="0 0 24 24">
+                <path d="M3 11.5 12 4l9 7.5v8.5h-6v-6H9v6H3z" /></svg
+            ></span>
+            <span class="nav-item__label">Trang chủ</span>
+          </a>
+          <a class="nav-item" href="#">
+            <span class="nav-item__icon" aria-hidden="true"
+              ><svg viewBox="0 0 24 24">
+                <path
+                  d="M12 12.4a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Zm0 2.1c-4.2 0-8 2.1-8 5v1.5h16V19.5c0-3-3.8-5-8-5Z"
+                /></svg
+            ></span>
+            <span class="nav-item__label">Thông tin tài khoản</span>
+          </a>
+          <a class="nav-item" href="#">
+            <span class="nav-item__icon" aria-hidden="true"
+              ><svg viewBox="0 0 24 24">
+                <path d="M4 19h16v2H4zM7 3h10l3 5-8 13L4 8z" /></svg
+            ></span>
+            <span class="nav-item__label">Nhân Viên</span>
+          </a>
+          <a class="nav-item nav-item--active" href="#" aria-current="page">
+            <span class="nav-item__icon" aria-hidden="true"
+              ><svg viewBox="0 0 24 24">
+                <path
+                  d="M7 3h5v4H7zM7 9h10v4H7zM7 15h14v4H7zM4 3h2v16H4z"
+                /></svg
+            ></span>
+            <span class="nav-item__label">Sản phẩm</span>
+          </a>
+          <a class="nav-item" href="#">
+            <span class="nav-item__icon" aria-hidden="true"
+              ><svg viewBox="0 0 24 24">
+                <path d="M4 5h16v14H4zM7 8h10v2H7zm0 4h7v2H7z" /></svg
+            ></span>
+            <span class="nav-item__label">Nhà cung cấp</span>
+          </a>
+          <a class="nav-item" href="#">
+            <span class="nav-item__icon" aria-hidden="true"
+              ><svg viewBox="0 0 24 24">
+                <path d="M5 4h14v16H5zM7 6v3h10V6zm0 5v7h10v-7z" /></svg
+            ></span>
+            <span class="nav-item__label">Khách hàng</span>
+          </a>
+          <a class="nav-item" href="#">
+            <span class="nav-item__icon" aria-hidden="true"
+              ><svg viewBox="0 0 24 24">
+                <path d="M6 4h12v4H6zM5 8h14v12H5zM9 12h6v2H9z" /></svg
+            ></span>
+            <span class="nav-item__label">Thẻ tích điểm</span>
+          </a>
+          <a class="nav-item" href="#">
+            <span class="nav-item__icon" aria-hidden="true"
+              ><svg viewBox="0 0 24 24">
+                <path
+                  d="M6 4h12v4H6zM6 10h12v10H6zM8 12h8v2H8zM8 16h5v2H8z"
+                /></svg
+            ></span>
+            <span class="nav-item__label">Đánh giá</span>
+          </a>
+          <a class="nav-item" href="#">
+            <span class="nav-item__icon" aria-hidden="true"
+              ><svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2 21 6.5v11L12 22l-9-4.5v-11zM12 6.5 7.5 9v6L12 17.5l4.5-2.5v-6z"
+                /></svg
+            ></span>
+            <span class="nav-item__label">Voucher</span>
+          </a>
+          <a class="nav-item" href="#">
+            <span class="nav-item__icon" aria-hidden="true"
+              ><svg viewBox="0 0 24 24">
+                <path
+                  d="M4 5h16v14H4zM7 8h10v2H7zm0 4h10v2H7zm0 4h6v2H7z"
+                /></svg
+            ></span>
+            <span class="nav-item__label">Sự kiện</span>
+          </a>
+          <a class="nav-item" href="#">
+            <span class="nav-item__icon" aria-hidden="true"
+              ><svg viewBox="0 0 24 24">
+                <path
+                  d="M5 4h14v16H5zM7 8h10v10H7zM8 2h2v4H8zm6 0h2v4h-2z"
+                /></svg
+            ></span>
+            <span class="nav-item__label">Hóa đơn</span>
+          </a>
+        </nav>
+
+        <button class="logout-btn" type="button">
+          <span class="logout-btn__icon" aria-hidden="true"
+            ><svg viewBox="0 0 24 24">
+              <path
+                d="M10 17v-2h4v-2h-4V9l-5 3 5 3zM3 4h8v2H5v12h6v2H3zM21 12l-4-4v3h-6v2h6v3z"
+              /></svg
+          ></span>
+          Đăng xuất
+        </button>
+      </aside>
+
+      <div class="main-shell">
+        <header class="topbar">
+          <h1 class="topbar__title">Quản lý sản phẩm</h1>
+          <div class="topbar__actions" aria-label="Tiện ích">
+            <button class="icon-btn" type="button" aria-label="Tin nhắn">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 5h16v12H7l-3 3zM6 7v8h11.2l.8.8V7z" />
+              </svg>
+            </button>
+            <button class="icon-btn" type="button" aria-label="Thông báo">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 3a4 4 0 0 0-4 4v2.4c0 .8-.2 1.6-.6 2.3L6 13.8V16h12v-2.2l-1.4-2.1c-.4-.7-.6-1.5-.6-2.3V7a4 4 0 0 0-4-4zm0 18a2.5 2.5 0 0 0 2.4-1.8H9.6A2.5 2.5 0 0 0 12 21z"
+                />
+              </svg>
+            </button>
+            <button class="icon-btn" type="button" aria-label="Trợ giúp">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 17h-2v-2h2zm2.1-7.7-.9.9a2.7 2.7 0 0 0-1.2 2.3h-2a4.3 4.3 0 0 1 1.7-3.6l1.2-1.2A1.8 1.8 0 1 0 10 8.9H8a3.8 3.8 0 1 1 7.1 2.4z"
+                />
+              </svg>
+            </button>
+          </div>
+        </header>
+
+        <main class="content">
+          <section
+            class="screen screen--active"
+            data-screen="list"
+            aria-label="Danh sách sản phẩm"
+          >
+            <div class="breadcrumb">
+              <span>Trang chủ</span>
+              <span class="breadcrumb__sep">&gt;</span>
+              <span>Quản lý sản phẩm</span>
+            </div>
+
+            <div class="filters">
+              <div class="field-group">
+                <label class="field-group__label" for="productCodeSearch"
+                  >Mã sản phẩm:</label
+                >
+                <input id="productCodeSearch" class="text-input" type="text" />
+              </div>
+              <div class="field-group">
+                <label class="field-group__label" for="productNameSearch"
+                  >Tên sản phẩm:</label
+                >
+                <input id="productNameSearch" class="text-input" type="text" />
+              </div>
+              <button
+                class="primary-btn primary-btn--search"
+                type="button"
+                id="searchBtn"
+              >
+                Tìm Kiếm
+              </button>
+            </div>
+
+            <section class="panel">
+              <div class="panel__header">
+                <h2 class="panel__title">Danh sách sản phẩm</h2>
+                <button class="primary-btn" type="button" id="addProductBtn">
+                  Thêm sản phẩm
+                </button>
+              </div>
+
+              <div class="table-wrap">
+                <table class="product-table">
+                  <thead>
+                    <tr>
+                      <th>Mã sản phẩm</th>
+                      <th>Tên sản phẩm</th>
+                      <th>Giá bán</th>
+                      <th>Số lượng</th>
+                      <th>Đơn vị tính</th>
+                      <th>Thao tác</th>
+                    </tr>
+                  </thead>
+                  <tbody id="productTableBody"></tbody>
+                </table>
+              </div>
+
+              <div class="pagination" aria-label="Phân trang">
+                <button
+                  class="page-btn"
+                  type="button"
+                  data-page-step="prev"
+                  aria-label="Trang trước"
+                >
+                  &lsaquo;
+                </button>
+                <div id="paginationNumbers" class="pagination__numbers"></div>
+                <button
+                  class="page-btn"
+                  type="button"
+                  data-page-step="next"
+                  aria-label="Trang sau"
+                >
+                  &rsaquo;
+                </button>
+              </div>
+            </section>
+          </section>
+
+          <section
+            class="screen"
+            data-screen="form"
+            aria-label="Thêm hoặc sửa sản phẩm"
+          >
+            <div class="breadcrumb">
+              <span>Trang chủ</span>
+              <span class="breadcrumb__sep">&gt;</span>
+              <span>Quản lý sản phẩm</span>
+            </div>
+
+            <div class="form-page__title" id="formPageTitle">
+              Thêm mới sản phẩm
+            </div>
+
+            <form class="product-form" id="productForm">
+              <div class="form-grid">
+                <div class="field-group field-group--stacked">
+                  <label class="field-group__label" for="formCode"
+                    >Mã sản phẩm:</label
+                  >
+                  <input
+                    id="formCode"
+                    class="text-input text-input--readonly"
+                    type="text"
+                    readonly
+                  />
+                </div>
+
+                <div class="field-group field-group--stacked">
+                  <label class="field-group__label" for="formName"
+                    >Tên sản phẩm<span class="required-star">*</span>:</label
+                  >
+                  <input
+                    id="formName"
+                    class="text-input"
+                    type="text"
+                    required
+                  />
+                </div>
+
+                <div class="field-group field-group--stacked">
+                  <label class="field-group__label" for="formUnit"
+                    >Đơn vị tính<span class="required-star">*</span>:</label
+                  >
+                  <input
+                    id="formUnit"
+                    class="text-input"
+                    type="text"
+                    required
+                  />
+                </div>
+
+                <div class="field-group field-group--stacked">
+                  <label class="field-group__label" for="formPrice"
+                    >Giá bán<span class="required-star">*</span>:</label
+                  >
+                  <input
+                    id="formPrice"
+                    class="text-input"
+                    type="text"
+                    inputmode="numeric"
+                    required
+                  />
+                </div>
+
+                <div class="field-group field-group--stacked field-group--half">
+                  <label class="field-group__label" for="formQuantity"
+                    >Số lượng<span class="required-star">*</span>:</label
+                  >
+                  <input
+                    id="formQuantity"
+                    class="text-input"
+                    type="text"
+                    inputmode="numeric"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button
+                  class="primary-btn form-actions__confirm"
+                  type="submit"
+                  id="formSubmitBtn"
+                >
+                  Thêm mới
+                </button>
+                <button class="secondary-btn" type="button" id="formCancelBtn">
+                  Hủy
+                </button>
+              </div>
+            </form>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <template id="rowTemplate">
+      <tr>
+        <td class="cell-code"></td>
+        <td class="cell-name"></td>
+        <td class="cell-price"></td>
+        <td class="cell-quantity"></td>
+        <td class="cell-unit"></td>
+        <td class="cell-actions">
+          <button
+            class="action-icon action-icon--edit"
+            type="button"
+            aria-label="Chỉnh sửa"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M4 17.2V20h2.8l8.2-8.2-2.8-2.8zM19.7 7.3a1 1 0 0 0 0-1.4l-1.6-1.6a1 1 0 0 0-1.4 0l-1.2 1.2 3 3z"
+              />
+            </svg>
+          </button>
+          <button
+            class="action-icon action-icon--delete"
+            type="button"
+            aria-label="Xóa"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M8 4h8l1 2h4v2H3V6h4zm1 6h2v8H9zm4 0h2v8h-2zM7 10h10l-1 10H8z"
+              />
+            </svg>
+          </button>
+        </td>
+      </tr>
+    </template>
+
+    <div class="modal-overlay" id="deleteModal" hidden>
+      <div
+        class="modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="deleteModalTitle"
+      >
+        <h3 class="modal-dialog__title" id="deleteModalTitle">Xóa thông tin</h3>
+        <div class="modal-dialog__divider"></div>
+        <p class="modal-dialog__text">
+          Bạn có chắc chắn muốn xóa thông tin này không ?
+        </p>
+        <div class="modal-dialog__actions">
+          <button
+            class="modal-btn modal-btn--confirm"
+            type="button"
+            id="deleteConfirmBtn"
+          >
+            Xác nhận
+          </button>
+          <button
+            class="modal-btn modal-btn--cancel"
+            type="button"
+            id="deleteCancelBtn"
+          >
+            Hủy
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
