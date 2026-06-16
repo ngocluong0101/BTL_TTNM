@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LLA Store - Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="../../assets/css/common.css" />
+    <link rel="stylesheet" href="cart.css" />
+  </head>
+  <body class="cart-page" data-page="detail">
+    <div class="page-shell">
+      <div data-common-header data-active-page="detail"></div>
+
+      <main class="page-main">
+        <section class="detail-layout container">
+          <div class="detail-layout__breadcrumbs">
+            Trang chủ &nbsp;&gt;&nbsp; Giày hàng &nbsp;&gt;&nbsp; Giày Chạy Bộ
+            Nam HOKA Skyward
+          </div>
+          <h1 class="detail-layout__title" id="detailTitle">
+            Giày Chạy Bộ Nam HOKA Skyward
+          </h1>
+
+          <div class="detail-grid">
+            <article class="detail-media">
+              <div class="detail-media__image" id="detailMainImage">👟</div>
+            </article>
+
+            <article class="detail-info">
+              <h2 class="detail-info__title">Giày Chạy Bộ Nam HOKA Skyward</h2>
+              <div class="detail-meta" id="detailMeta">
+                Số lượng: 120 • Đã bán: 1324
+              </div>
+              <div class="detail-price" id="detailPrice">1.599.000đ</div>
+              <div class="detail-meta" id="detailSubtitle">
+                Màu sắc: ICE GROUT / CYAN
+              </div>
+
+              <div class="detail-option">
+                <p class="detail-option__label">Thumbnails</p>
+                <div class="detail-swatches" id="detailThumbs"></div>
+              </div>
+
+              <div class="detail-option">
+                <p class="detail-option__label">Kích thước</p>
+                <div class="detail-sizes" id="detailSizes"></div>
+              </div>
+
+              <div class="detail-option">
+                <p class="detail-option__label">Số lượng</p>
+                <div class="detail-qty">
+                  <button type="button" id="detailMinus">-</button>
+                  <span id="detailQty">1</span>
+                  <button type="button" id="detailPlus">+</button>
+                </div>
+              </div>
+
+              <div class="detail-actions">
+                <button
+                  class="btn btn--primary"
+                  id="detailAddToCart"
+                  type="button"
+                >
+                  Thêm vào giỏ hàng
+                </button>
+                <button
+                  class="btn btn--secondary"
+                  id="detailBuyNow"
+                  type="button"
+                >
+                  Mua ngay
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div class="detail-tabs">
+            <section class="tab-set">
+              <div class="tab-set__header">
+                <button
+                  class="tab-set__button tab-set__button--active"
+                  type="button"
+                >
+                  Mô tả sản phẩm
+                </button>
+                <button class="tab-set__button" type="button">
+                  Quy định đổi trả
+                </button>
+                <button class="tab-set__button" type="button">Đánh giá</button>
+              </div>
+              <div class="tab-set__content">
+                <h3 style="margin-top: 0; font-size: 18px; font-weight: 800">
+                  GIÀY CHẠY BỘ NAM HOKA SKYWARD X 2
+                </h3>
+                <p id="detailDescription">
+                  Mẫu giày chạy bộ mang lại cảm giác êm, bám chắc và ổn định cho
+                  hoạt động hằng ngày. Thiết kế hiện đại, tối giản và phù hợp
+                  cho nhiều kiểu phối đồ thể thao.
+                </p>
+                <table
+                  style="
+                    width: 100%;
+                    max-width: 360px;
+                    border-collapse: collapse;
+                    font-size: 12px;
+                  "
+                >
+                  <tbody>
+                    <tr>
+                      <td
+                        style="
+                          border: 1px solid #ddd;
+                          padding: 6px 8px;
+                          width: 140px;
+                        "
+                      >
+                        Trọng lượng
+                      </td>
+                      <td style="border: 1px solid #ddd; padding: 6px 8px">
+                        312
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="border: 1px solid #ddd; padding: 6px 8px">
+                        Kiểu dáng
+                      </td>
+                      <td style="border: 1px solid #ddd; padding: 6px 8px">
+                        Giày chạy bộ
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="border: 1px solid #ddd; padding: 6px 8px">
+                        Chất liệu đế
+                      </td>
+                      <td style="border: 1px solid #ddd; padding: 6px 8px">
+                        EVA + cao su
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="border: 1px solid #ddd; padding: 6px 8px">
+                        Độ rộng
+                      </td>
+                      <td style="border: 1px solid #ddd; padding: 6px 8px">
+                        Regular Fit
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <aside>
+              <h2 class="section-title" style="margin-bottom: 14px">
+                Sản phẩm liên quan
+              </h2>
+              <div class="related-grid" id="detailRelated"></div>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <div data-common-footer></div>
+      <div id="modalRoot"></div>
+    </div>
+
+    <script src="../../assets/js/utils.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="cart.js"></script>
+  </body>
+</html>

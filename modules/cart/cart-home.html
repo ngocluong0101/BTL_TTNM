@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LLA Store - Trang chủ</title>
+    <link rel="stylesheet" href="../../assets/css/common.css" />
+    <link rel="stylesheet" href="cart.css" />
+  </head>
+  <body class="cart-page" data-page="home">
+    <div class="page-shell">
+      <div data-common-header data-active-page="home"></div>
+
+      <main class="page-main">
+        <section class="hero container">
+          <div class="hero__banner">
+            <article class="hero-card hero-card--sale">
+              <div class="hero-card__label">BE READY FOR THE BEST!</div>
+              <div class="hero-card__content">
+                <div class="hero-card__kicker">% · BIG SALE · UP TO 50%</div>
+                <h1 class="hero-card__title">BIG SALE</h1>
+                <a
+                  class="btn btn--primary hero-card__cta"
+                  href="./cart-detail.html?id=1"
+                  >SHOP NOW</a
+                >
+              </div>
+            </article>
+
+            <article class="hero-card hero-card--brand">
+              <div class="brand-panel">
+                <div class="brand-panel__name">
+                  LLA <span class="brand-panel__accent">SPORTS STORE</span>
+                </div>
+                <div class="brand-panel__sub">EQUIPMENT &amp; MORE</div>
+                <div class="muted" style="margin-top: 18px; font-size: 14px">
+                  Sportswear · Shoes · Accessories
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-block container">
+          <div class="section-block__header">
+            <h2 class="section-title">DANH MỤC SẢN PHẨM</h2>
+          </div>
+          <div class="category-grid" id="categoryGrid"></div>
+        </section>
+
+        <section class="section-block container" id="promotion">
+          <div class="section-block__header">
+            <h2 class="section-title">BỘ SƯU TẬP MỚI</h2>
+            <a class="muted" href="./cart-detail.html?id=1">Xem tất cả</a>
+          </div>
+
+          <div class="promo-area">
+            <div class="product-scroller">
+              <div class="product-strip" id="homeProductStrip"></div>
+            </div>
+            <aside
+              class="product-card product-card--feature"
+              style="min-height: 100%"
+            >
+              <div class="product-card__media" data-tone="AIR MAX DAY"></div>
+              <div class="product-card__body">
+                <div class="product-card__name">AIR MAX DAY</div>
+                <div class="product-card__price">MUA NGAY</div>
+                <a
+                  class="btn btn--primary product-card__action"
+                  href="./cart-detail.html?id=1"
+                  >MUA NGAY</a
+                >
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section-block container">
+          <div class="section-block__header">
+            <h2 class="section-title">THƯƠNG HIỆU NỔI BẬT</h2>
+          </div>
+          <div class="brand-strip" id="brandStrip"></div>
+        </section>
+      </main>
+
+      <div data-common-footer></div>
+      <div id="modalRoot"></div>
+    </div>
+
+    <script src="../../assets/js/utils.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="cart.js"></script>
+  </body>
+</html>
