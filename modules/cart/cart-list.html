@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LLA Store - Giỏ hàng</title>
+    <link rel="stylesheet" href="../../assets/css/common.css" />
+    <link rel="stylesheet" href="cart.css" />
+  </head>
+  <body class="cart-page" data-page="cart">
+    <div class="page-shell">
+      <div data-common-header data-active-page="cart"></div>
+
+      <main class="page-main">
+        <section class="container" style="padding-top: 22px">
+          <div class="detail-layout__breadcrumbs">
+            Trang chủ &nbsp;&gt;&nbsp; Giỏ hàng
+          </div>
+          <h1
+            class="detail-layout__title"
+            style="font-size: 28px; margin-bottom: 22px"
+          >
+            Giỏ hàng
+          </h1>
+
+          <div class="split-section">
+            <section
+              class="card-table"
+              aria-label="Danh sách sản phẩm trong giỏ"
+            >
+              <div class="card-table__header">
+                <span>Sản phẩm</span>
+                <span>Giá tiền</span>
+                <span>Kích thước</span>
+                <span>Số lượng</span>
+                <span>Thành tiền</span>
+                <span>Thao tác</span>
+              </div>
+              <div id="cartRows"></div>
+            </section>
+
+            <aside class="summary-card" aria-label="Tổng tiền tạm tính">
+              <h2 class="summary-card__title">Số tiền tạm tính</h2>
+              <div class="summary-card__body">
+                <div class="summary-line">
+                  <span>Tạm tính :</span><strong id="summarySubtotal">0</strong>
+                </div>
+                <div class="summary-line">
+                  <span>Giảm giá :</span><strong id="summaryDiscount">0</strong>
+                </div>
+                <div class="summary-line summary-line--total">
+                  <span>Tổng cộng :</span><strong id="summaryTotal">0</strong>
+                </div>
+                <button class="summary-action" id="checkoutBtn" type="button">
+                  Đặt hàng
+                </button>
+              </div>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <div data-common-footer></div>
+      <div id="modalRoot"></div>
+    </div>
+
+    <script src="../../assets/js/utils.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="cart.js"></script>
+  </body>
+</html>
