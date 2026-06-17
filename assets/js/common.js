@@ -48,7 +48,7 @@ window.CartCommon = (() => {
             <a class="nav-link ${isHomeActive ? "nav-link--active" : ""}" href="./cart-home.html">Trang chủ</a>
             <a class="nav-link ${isProductActive ? "nav-link--active" : ""}" href="./cart-detail.html">Sản phẩm</a>
             <a class="nav-link" href="./cart-home.html#promotion">Khuyến mãi</a>
-            <a class="nav-link ${isCartActive ? "nav-link--active" : ""}" href="./cart-list.html">Đơn mua</a>
+            <a class="nav-link ${isCartActive ? "nav-link--active" : ""}" href="../don-mua/index.html">Đơn mua</a>
             <div class="nav-divider"></div>
             <span class="nav-pill">Best Seller <span class="badge">Sale</span></span>
           </div>

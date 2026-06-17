@@ -1,0 +1,546 @@
+/* ================================================== */
+/* CSS CHO HEADER LLA STORE (Giao diện Khách hàng)    */
+/* ================================================== */
+.header-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+}
+
+.header-top {
+    background-color: var(--primary-green, #6FDD00);
+    width: 100%;
+}
+
+.header-top-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 118px;
+    gap: 16px;
+    max-width: 1905px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo-img {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Thanh tìm kiếm */
+.search-box {
+    flex: 1;
+    max-width: 654px;
+    height: 60px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-input {
+    flex: 1;
+    height: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    padding-left: 16px;
+    padding-right: 48px;
+    font-size: 15px;
+    color: #64748b;
+}
+
+.search-btn {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Khối Icon bên phải */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon-circle {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: #011A2D;
+    border: 1px solid #1e3a8a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.badge {
+    position: absolute;
+    top: -4px;
+    right: 0;
+    width: 19px;
+    height: 19px;
+    background-color: #facc15;
+    border: 2px solid #011A2D;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 600;
+    color: #713f12;
+}
+
+.account-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.account-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.sign-in { font-size: 11px; color: rgba(0,0,0,0.6); }
+.acc-name { font-size: 13px; font-weight: 600; color: #000; }
+
+/* Menu Trắng */
+.header-bottom {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e7ecee;
+    width: 100%;
+}
+
+.header-bottom-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    max-width: 1905px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.category-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    padding: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+}
+
+.nav-item:hover {
+    color: #6FDD00;
+}
+
+.nav-divider {
+    width: 1px;
+    height: 25px;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.best-seller {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.sale-badge {
+    background-color: #f43f5e;
+    color: #fff1f2;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: white;
+    padding: 10px 20px;
+}
+
+.mobile-menu a {
+    padding: 10px 0;
+    text-decoration: none;
+    color: #000;
+}
+
+@media (max-width: 768px) {
+    .desktop-only { display: none !important; }
+    .header-top-container { height: 72px; }
+    .logo-img { height: 60px; }
+    .mobile-menu.active { display: flex; } 
+}
+
+/* Container giới hạn độ rộng */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Thanh Tabs */
+.order-tabs {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #6FDD00;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    background: #fff;
+}
+
+/* Tab dùng được cả <button> lẫn <a> — reset anchor defaults */
+.tab-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 16px 0;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #000;
+    transition: all 0.3s ease;
+    /* Reset cho <a> tag */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.tab-btn.active {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 2px;
+}
+
+.tab-btn:hover {
+    background-color: #f4fceb;
+}
+
+/* ================== THẺ ĐƠN HÀNG ================== */
+.order-card {
+    border: 2px solid #6FDD00;
+    border-radius: 8px;
+    background: #fff;
+    margin-bottom: 24px;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid #ccc;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.order-items {
+    padding: 0 24px;
+}
+
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item-row:last-child {
+    border-bottom: none;
+}
+
+.item-left {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.item-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    background: #f5f5f5;
+    border-radius: 4px;
+}
+
+.item-name {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.item-variant {
+    font-size: 13px;
+    color: #666;
+}
+
+.item-right {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.order-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-top: 1px solid #ccc;
+    background-color: #fafbfc;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.footer-left {
+    font-size: 14px;
+    color: #333;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+}
+
+.total-section {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.total-price {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.action-buttons button {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.action-buttons button:hover {
+    opacity: 0.8;
+}
+
+.btn-cancel {
+    background-color: #a3e635;
+    color: #000;
+}
+
+.btn-contact {
+    background-color: #a3a3a3;
+    color: #fff;
+}
+
+/* ================================================== */
+/* POPUP XÁC NHẬN HỦY ĐƠN HÀNG                       */
+/* ================================================== */
+
+/* Overlay tối phía sau popup */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;                       /* top/right/bottom/left = 0 */
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Khi có class .active thì hiện overlay + dùng flex để căn giữa popup */
+.modal-overlay.active {
+    display: flex;
+}
+
+/* Hộp popup */
+.modal-box {
+    background: #fff;
+    border-radius: 8px;
+    padding: 32px 36px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    text-align: left;
+    animation: modal-in 0.18s ease;
+}
+
+@keyframes modal-in {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.modal-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #111;
+}
+
+.modal-body {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 28px;
+    line-height: 1.5;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+/* Nút "Xác nhận" — màu đỏ để phân biệt hành động nguy hiểm */
+.modal-btn-confirm {
+    padding: 10px 24px;
+    background-color: #ef4444;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.modal-btn-confirm:hover {
+    background-color: #dc2626;
+}
+
+/* Nút "Hủy" — trung tính */
+.modal-btn-cancel {
+    padding: 10px 24px;
+    background-color: #e5e7eb;
+    color: #374151;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.modal-btn-cancel:hover {
+    background-color: #d1d5db;
+}
+
+/* ================================================== */
+/* TOAST THÔNG BÁO                                    */
+/* ================================================== */
+.toast {
+    display: none;
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 200;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 14px 20px;
+    min-width: 260px;
+    max-width: 340px;
+    align-items: center;
+    gap: 12px;
+    animation: toast-in 0.25s ease;
+}
+
+.toast.active {
+    display: flex;
+}
+
+@keyframes toast-in {
+    from { opacity: 0; transform: translateX(40px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Icon tròn xanh với dấu tick */
+.toast-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #6FDD00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.toast-text {
+    flex: 1;
+}
+
+.toast-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 2px;
+}
+
+.toast-message {
+    font-size: 12px;
+    color: #555;
+}
+
+/* Nút đóng toast */
+.toast-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #9ca3af;
+    font-size: 18px;
+    line-height: 1;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.toast-close:hover {
+    color: #374151;
+}
