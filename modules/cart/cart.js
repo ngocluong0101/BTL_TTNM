@@ -399,7 +399,9 @@ function bindCartActions() {
   const orderBtn = $("#checkoutBtn");
   if (orderBtn) {
     orderBtn.addEventListener("click", () => {
-      window.location.href = "./cart-detail.html?id=1";
+      // Save cart to localStorage before navigating
+      localStorage.setItem("cart", JSON.stringify(state.cart));
+      window.location.href = "../order-client/order-detail.html";
     });
   }
 }

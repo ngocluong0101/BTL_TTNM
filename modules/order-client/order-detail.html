@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LLA Store - Đặt hàng</title>
+    <link rel="stylesheet" href="../../assets/css/common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="order-page" data-page="order">
+    <div class="page-shell">
+      <div data-common-header data-active-page="order"></div>
+
+      <main class="page-main">
+        <section class="container" style="padding-top: 22px">
+          <div class="detail-layout__breadcrumbs">
+            Trang chủ &nbsp;&gt;&nbsp; Giỏ hàng &nbsp;&gt;&nbsp; Đặt hàng
+          </div>
+          <h1
+            class="detail-layout__title"
+            style="font-size: 28px; margin-bottom: 22px"
+          >
+            Đặt hàng
+          </h1>
+
+          <div class="order-layout">
+            <!-- Left Section -->
+            <section class="order-left">
+              <!-- Delivery Address -->
+              <div class="order-card">
+                <div class="order-card__header">
+                  <span class="order-card__title">🏠 Địa chỉ nhận hàng</span>
+                  <button class="btn-change" id="changeAddressBtn" type="button">
+                    Thay đổi
+                  </button>
+                </div>
+                <div class="order-card__body">
+                  <div class="address-info">
+                    <p class="address-name">
+                      <strong id="deliveryName">Đỗ Đình An</strong> - <span id="deliveryPhone">0123456789</span>
+                    </p>
+                    <p class="address-text" id="deliveryAddress">Ngõ 165 Đường Quang Hàm, Cầu Giấy Hà Nội</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Order Items -->
+              <div class="order-card">
+                <div class="order-card__header">
+                  <span class="order-card__title">📦 Thông tin đơn hàng</span>
+                </div>
+                <div class="order-card__body">
+                  <table class="order-items-table">
+                    <thead>
+                      <tr>
+                        <th>Tên sản phẩm</th>
+                        <th>Đơn giá</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                      </tr>
+                    </thead>
+                    <tbody id="orderItemsBody"></tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Voucher -->
+              <div class="order-card">
+                <div class="order-card__header">
+                  <span class="order-card__title">🎫 Voucher giảm giá</span>
+                </div>
+                <div class="order-card__body">
+                  <div class="voucher-input-group">
+                    <input
+                      type="text"
+                      id="voucherCode"
+                      placeholder="Nhập mã voucher"
+                      class="voucher-input"
+                    />
+                    <button class="voucher-btn" id="applyVoucherBtn" type="button">
+                      Áp dụng
+                    </button>
+                  </div>
+                  <div id="voucherMessage" class="voucher-message"></div>
+                </div>
+              </div>
+
+              <!-- Payment Method -->
+              <div class="order-card">
+                <div class="order-card__header">
+                  <span class="order-card__title">💳 Phương thức thanh toán</span>
+                </div>
+                <div class="order-card__body">
+                  <div class="payment-options">
+                    <label class="payment-option">
+                      <input
+                        type="radio"
+                        name="paymentMethod"
+                        value="cod"
+                        checked
+                        class="payment-radio"
+                      />
+                      <span class="payment-label">Thanh toán khi nhận hàng (COD)</span>
+                    </label>
+                    <label class="payment-option">
+                      <input
+                        type="radio"
+                        name="paymentMethod"
+                        value="bank"
+                        class="payment-radio"
+                      />
+                      <span class="payment-label">Chuyển khoản ngân hàng</span>
+                    </label>
+                    <label class="payment-option">
+                      <input
+                        type="radio"
+                        name="paymentMethod"
+                        value="ewallet"
+                        class="payment-radio"
+                      />
+                      <span class="payment-label">Ví điện tử</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Notes -->
+              <div class="order-card">
+                <div class="order-card__header">
+                  <span class="order-card__title">📝 Ghi chú đơn hàng</span>
+                </div>
+                <div class="order-card__body">
+                  <textarea
+                    id="orderNotes"
+                    class="order-notes"
+                    placeholder="Nhập ghi chú cho đơn hàng (nếu có)..."
+                    rows="3"
+                  ></textarea>
+                </div>
+              </div>
+            </section>
+
+            <!-- Right Section - Order Summary -->
+            <aside class="order-right">
+              <div class="order-summary">
+                <h2 class="summary-title">Hoá đơn của bạn</h2>
+                
+                <div class="summary-date">
+                  <span>Ngày đặt:</span>
+                  <strong id="orderDate">29/05/2026</strong>
+                </div>
+
+                <div class="summary-details">
+                  <div class="summary-row">
+                    <span>Trạng thái:</span>
+                    <span id="orderStatus" class="status-pending">Đã xác nhận</span>
+                  </div>
+                  <div class="summary-row">
+                    <span>Giao đến:</span>
+                    <span id="summaryDelivery">Đỗ Đình An</span>
+                  </div>
+                  <div class="summary-row">
+                    <span>Tổng tiền hàng:</span>
+                    <strong id="summarySubtotal">5.757.000 đ</strong>
+                  </div>
+                  <div class="summary-row">
+                    <span>Giảm giá:</span>
+                    <strong id="summaryDiscount">0 đ</strong>
+                  </div>
+                  <div class="summary-row">
+                    <span>Phí vận chuyển:</span>
+                    <strong id="summaryShipping">35.000 đ</strong>
+                  </div>
+                  <div class="summary-row">
+                    <span>Phương thức:</span>
+                    <span id="summaryShippingMethod">Tiêu Món</span>
+                  </div>
+
+                  <div class="summary-divider"></div>
+
+                  <div class="summary-row summary-total">
+                    <span>Tổng thanh toán:</span>
+                    <strong id="summaryTotal">5.792.000 đ</strong>
+                  </div>
+                </div>
+
+                <button class="summary-action" id="confirmOrderBtn" type="button">
+                  Thanh toán
+                </button>
+              </div>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <div data-common-footer></div>
+      <div id="modalRoot"></div>
+    </div>
+
+    <!-- Address Modal -->
+    <div id="addressModal" class="modal hidden">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Thay đổi địa chỉ nhận hàng</h2>
+          <button class="modal-close" id="closeAddressModal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="addressForm">
+            <div class="form-group">
+              <label for="fullName">Họ và tên:</label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                class="form-input"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">Số điện thoại:</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="form-input"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="address">Địa chỉ:</label>
+              <textarea
+                id="address"
+                name="address"
+                class="form-input"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+            <div class="modal-actions">
+              <button type="button" class="btn-cancel" id="cancelAddressBtn">
+                Hủy
+              </button>
+              <button type="submit" class="btn-submit">Lưu địa chỉ</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../assets/js/utils.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
