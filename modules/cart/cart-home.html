@@ -90,6 +90,40 @@
 
     <script src="../../assets/js/utils.js"></script>
     <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/products.js"></script>
     <script src="cart.js"></script>
+
+    <!-- Search redirect -->
+    <script>
+      (function () {
+        // Đường dẫn tới search-result.html tính từ thư mục hiện tại (modules/cart/)
+        var SEARCH_URL = "../search/search-result.html";
+
+        function doSearch() {
+          var input = document.querySelector(".searchbar__input");
+          var keyword = input ? input.value.trim() : "";
+          if (!keyword) return;
+          window.location.href = SEARCH_URL + "?q=" + encodeURIComponent(keyword);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+          var input = document.querySelector(".searchbar__input");
+          var icon  = document.querySelector(".searchbar__icon");
+
+          if (input) {
+            // Nhấn Enter trong ô tìm kiếm
+            input.addEventListener("keydown", function (e) {
+              if (e.key === "Enter") doSearch();
+            });
+          }
+
+          if (icon) {
+            // Click icon kính lúp
+            icon.style.cursor = "pointer";
+            icon.addEventListener("click", doSearch);
+          }
+        });
+      })();
+    </script>
   </body>
 </html>

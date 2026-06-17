@@ -1,31 +1,53 @@
 window.CartCommon = (() => {
+
+  /**
+   * Tính đường dẫn tương đối từ trang hiện tại tới thư mục modules/
+   * Cấu trúc project:
+   *   assets/js/common.js
+   *   modules/cart/cart-home.html      → prefix = "../"
+   *   modules/search/search-result.html → prefix = "../"
+   *   modules/don-mua/index.html        → prefix = "../"
+   *   (nếu có trang ở gốc)              → prefix = "modules/"
+   */
+  function getModulePrefix() {
+    const path = window.location.pathname;
+    // Nếu đang trong modules/<ten-module>/
+    if (path.includes("/modules/")) {
+      return "../";          // lên 1 cấp = thư mục modules/
+    }
+    return "modules/";       // đang ở gốc
+  }
+
   function buildHeader(activePage) {
-    const isHomeActive = activePage === "home";
+    const isHomeActive    = activePage === "home";
     const isProductActive = activePage === "detail";
-    const isCartActive = activePage === "cart";
+    const isCartActive    = activePage === "cart";
+    const isSearchActive  = activePage === "search";
+
+    const p = getModulePrefix(); // ví dụ "../" khi đang trong modules/cart/
 
     return `
       <header class="site-header">
         <div class="site-header__top">
           <div class="site-header__top-inner">
-            <a class="brand" href="./cart-home.html" aria-label="LLA Store trang chủ">
+            <a class="brand" href="${p}cart/cart-home.html" aria-label="LLA Store trang chủ">
               <span class="brand__text">LLA<br />STORE</span>
             </a>
 
-            <form class="searchbar" role="search" aria-label="Tìm kiếm sản phẩm">
+            <div class="searchbar" role="search" aria-label="Tìm kiếm sản phẩm">
               <div class="searchbar__field">
-                <input class="searchbar__input" type="search" placeholder="Search popular products..." />
-                <span class="searchbar__icon" aria-hidden="true">⌕</span>
+                <input class="searchbar__input" type="search" placeholder="Tìm kiếm sản phẩm..." />
+                <span class="searchbar__icon" aria-hidden="true" style="cursor:pointer">⌕</span>
               </div>
-            </form>
+            </div>
 
             <div class="header-actions">
               <button class="header-action" type="button" aria-label="Thông báo">
                 <span class="header-action__badge">0</span>
                 <span aria-hidden="true">◔</span>
               </button>
-              <a class="header-action" href="./cart-list.html" aria-label="Giỏ hàng">
-                <span class="header-action__badge" id="cartCount">8</span>
+              <a class="header-action" href="${p}cart/cart-list.html" aria-label="Giỏ hàng">
+                <span class="header-action__badge" id="cartCount">0</span>
                 <span aria-hidden="true">🛒</span>
               </a>
               <div class="account-pill" aria-label="Tài khoản">
@@ -40,15 +62,15 @@ window.CartCommon = (() => {
 
         <div class="site-header__nav">
           <div class="site-header__nav-inner">
-            <a class="nav-toggle" href="./cart-home.html">
+            <a class="nav-toggle" href="${p}cart/cart-home.html">
               <span aria-hidden="true">☰</span>
               <span>Danh mục sản phẩm</span>
             </a>
             <span class="nav-divider"></span>
-            <a class="nav-link ${isHomeActive ? "nav-link--active" : ""}" href="./cart-home.html">Trang chủ</a>
-            <a class="nav-link ${isProductActive ? "nav-link--active" : ""}" href="./cart-detail.html">Sản phẩm</a>
-            <a class="nav-link" href="./cart-home.html#promotion">Khuyến mãi</a>
-            <a class="nav-link ${isCartActive ? "nav-link--active" : ""}" href="../don-mua/index.html">Đơn mua</a>
+            <a class="nav-link ${isHomeActive    ? "nav-link--active" : ""}" href="${p}cart/cart-home.html">Trang chủ</a>
+            <a class="nav-link ${isProductActive ? "nav-link--active" : ""}" href="${p}cart/cart-detail.html">Sản phẩm</a>
+            <a class="nav-link"                                               href="${p}cart/cart-home.html#promotion">Khuyến mãi</a>
+            <a class="nav-link ${isCartActive    ? "nav-link--active" : ""}" href="${p}don-mua/index.html">Đơn mua</a>
             <div class="nav-divider"></div>
             <span class="nav-pill">Best Seller <span class="badge">Sale</span></span>
           </div>
@@ -148,23 +170,53 @@ window.CartCommon = (() => {
         </div>
       </div>
     `;
-
     overlay.querySelector(".modal-card__title").textContent = title;
-    overlay.querySelector(".modal-card__text").textContent = message;
+    overlay.querySelector(".modal-card__text").textContent  = message;
     overlay.querySelector(".modal-btn--confirm").textContent = confirmText;
-    overlay.querySelector(".modal-btn--cancel").textContent = cancelText;
-
+    overlay.querySelector(".modal-btn--cancel").textContent  = cancelText;
     return overlay;
+  }
+
+  function bindSearchBar() {
+    const p = getModulePrefix();
+    const SEARCH_URL = p + "search/search-result.html";
+
+    function doSearch() {
+      const input   = document.querySelector(".searchbar__input");
+      const keyword = input ? input.value.trim() : "";
+      if (!keyword) return;
+      window.location.href = SEARCH_URL + "?q=" + encodeURIComponent(keyword);
+    }
+
+    const input = document.querySelector(".searchbar__input");
+    const icon  = document.querySelector(".searchbar__icon");
+
+    if (input) {
+      // Điền sẵn từ khóa nếu đang ở trang kết quả
+      const params = new URLSearchParams(window.location.search);
+      const kw = params.get("q");
+      if (kw) input.value = kw;
+
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") doSearch();
+      });
+    }
+
+    if (icon) {
+      icon.addEventListener("click", doSearch);
+    }
   }
 
   function mountSharedChrome() {
     document.querySelectorAll("[data-common-header]").forEach((node) => {
       node.innerHTML = buildHeader(node.dataset.activePage || "");
     });
-
     document.querySelectorAll("[data-common-footer]").forEach((node) => {
       node.innerHTML = buildFooter();
     });
+
+    // Bind search sau khi header đã được inject vào DOM
+    bindSearchBar();
   }
 
   return {
