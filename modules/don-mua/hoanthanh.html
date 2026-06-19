@@ -1,157 +1,291 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Đơn mua - Hoàn thành | LLA Sports Store</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header class="header-wrapper">
-        <div class="header-top">
-            <div class="container header-top-container">
-                <a href="#" class="logo-link">
-                    <img src="https://api.builder.io/api/v1/image/assets/TEMP/6f9a841250ccea3f271ee5ff3278293f4ab3142c?width=526" alt="LLA Store" class="logo-img">
-                </a>
-                <div class="search-box desktop-only">
-                    <input type="text" placeholder="Search popular products..." class="search-input">
-                    <button class="search-btn">
-                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M9.625 17.4173C13.9282 17.4173 17.4167 13.9289 17.4167 9.62565C17.4167 5.32243 13.9282 1.83398 9.625 1.83398C5.32178 1.83398 1.83333 5.32243 1.83333 9.62565C1.83333 13.9289 5.32178 17.4173 9.625 17.4173Z" stroke="#314350" stroke-width="1.375" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.1667 20.1673L15.5833 15.584" stroke="#314350" stroke-width="1.375" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </button>
-                </div>
-                <div class="header-icons">
-                    <button class="icon-circle">
-                        <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><path d="M7.08334 26.5908V25.1742H9.37268V13.9471C9.37268 12.096 9.95823 10.4682 11.1293 9.06383C12.3005 7.65944 13.7851 6.78489 15.5833 6.44017V4.25H18.4167V6.44017C20.2149 6.78583 21.6996 7.66086 22.8707 9.06525C24.0418 10.4696 24.6273 12.0974 24.6273 13.9485V25.1728H26.9167V26.5894L7.08334 26.5908ZM16.9958 30.2954C16.3649 30.2954 15.8265 30.0711 15.3808 29.6225C14.935 29.1739 14.7121 28.6356 14.7121 28.0075H19.2879C19.2879 28.6403 19.0636 29.1796 18.615 29.6253C18.1655 30.0711 17.6257 30.2954 16.9958 30.2954ZM10.7893 25.1742H23.2121V13.9485C23.2121 12.2268 22.6072 10.761 21.3973 9.55117C20.1875 8.34133 18.7217 7.73689 17 7.73783C15.2783 7.73878 13.8125 8.34322 12.6027 9.55117C11.3928 10.7591 10.7884 12.2249 10.7893 13.9485V25.1742Z" fill="white"/></svg>
-                        <span class="badge">0</span>
-                    </button>
-                    <button class="icon-circle">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M8.19047 21.5239C8.71646 21.5239 9.14285 21.0975 9.14285 20.5715C9.14285 20.0455 8.71646 19.6191 8.19047 19.6191C7.66449 19.6191 7.2381 20.0455 7.2381 20.5715C7.2381 21.0975 7.66449 21.5239 8.19047 21.5239Z" stroke="white" stroke-width="1.82857" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.6666 21.5239C19.1927 21.5239 19.6191 21.0975 19.6191 20.5715C19.6191 20.0455 19.1927 19.6191 18.6666 19.6191C18.1407 19.6191 17.7143 20.0455 17.7143 20.5715C17.7143 21.0975 18.1407 21.5239 18.6666 21.5239Z" stroke="white" stroke-width="1.82857" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.5238 2.52344H4.42857L6.9619 14.7141C7.05483 15.1473 7.29587 15.5345 7.64353 15.8091C7.99119 16.0838 8.42371 16.2287 8.86666 16.2189H18.1809C18.6144 16.2182 19.0347 16.0696 19.3725 15.7977C19.7101 15.5258 19.9449 15.147 20.0381 14.7235L22 6.76155H5.33624" stroke="white" stroke-width="1.82857" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        <span class="badge">0</span>
-                    </button>
-                    <div class="account-box desktop-only">
-                        <button class="icon-circle">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 10C14.2091 10 16 8.20914 16 6C16 3.79086 14.2091 2 12 2C9.79086 2 8 3.79086 8 6C8 8.20914 9.79086 10 12 10Z" stroke="white" stroke-width="1.6"/><path d="M2.40002 21.9992C2.17911 21.9992 1.99894 21.82 2.01034 21.5993C2.12336 19.4109 3.16097 17.3325 4.92895 15.7767C6.80432 14.1263 9.34785 13.1992 12 13.1992C14.6522 13.1992 17.1957 14.1263 19.0711 15.7767C20.8391 17.3325 21.8767 19.4109 21.9897 21.5993C22.0011 21.82 21.8209 21.9992 21.6 21.9992H12H2.40002Z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/></svg>
-                        </button>
-                        <div class="account-text">
-                            <span class="sign-in">Đỗ Đình An</span>
-                            <span class="acc-name">Account</span>
-                        </div>
-                    </div>
-                </div>
+      <div class="header-top">
+        <div class="container header-top-container">
+          <a href="#" class="logo-link">
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/6f9a841250ccea3f271ee5ff3278293f4ab3142c?width=526"
+              alt="LLA Store"
+              class="logo-img"
+            />
+          </a>
+          <div class="search-box desktop-only">
+            <input
+              type="text"
+              placeholder="Search popular products..."
+              class="search-input"
+            />
+            <button class="search-btn">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <path
+                  d="M9.625 17.4173C13.9282 17.4173 17.4167 13.9289 17.4167 9.62565C17.4167 5.32243 13.9282 1.83398 9.625 1.83398C5.32178 1.83398 1.83333 5.32243 1.83333 9.62565C1.83333 13.9289 5.32178 17.4173 9.625 17.4173Z"
+                  stroke="#314350"
+                  stroke-width="1.375"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M20.1667 20.1673L15.5833 15.584"
+                  stroke="#314350"
+                  stroke-width="1.375"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="header-icons">
+            <button class="icon-circle">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                <path
+                  d="M7.08334 26.5908V25.1742H9.37268V13.9471C9.37268 12.096 9.95823 10.4682 11.1293 9.06383C12.3005 7.65944 13.7851 6.78489 15.5833 6.44017V4.25H18.4167V6.44017C20.2149 6.78583 21.6996 7.66086 22.8707 9.06525C24.0418 10.4696 24.6273 12.0974 24.6273 13.9485V25.1728H26.9167V26.5894L7.08334 26.5908ZM16.9958 30.2954C16.3649 30.2954 15.8265 30.0711 15.3808 29.6225C14.935 29.1739 14.7121 28.6356 14.7121 28.0075H19.2879C19.2879 28.6403 19.0636 29.1796 18.615 29.6253C18.1655 30.0711 17.6257 30.2954 16.9958 30.2954ZM10.7893 25.1742H23.2121V13.9485C23.2121 12.2268 22.6072 10.761 21.3973 9.55117C20.1875 8.34133 18.7217 7.73689 17 7.73783C15.2783 7.73878 13.8125 8.34322 12.6027 9.55117C11.3928 10.7591 10.7884 12.2249 10.7893 13.9485V25.1742Z"
+                  fill="white"
+                />
+              </svg>
+              <span class="badge">0</span>
+            </button>
+            <button class="icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M8.19047 21.5239C8.71646 21.5239 9.14285 21.0975 9.14285 20.5715C9.14285 20.0455 8.71646 19.6191 8.19047 19.6191C7.66449 19.6191 7.2381 20.0455 7.2381 20.5715C7.2381 21.0975 7.66449 21.5239 8.19047 21.5239Z"
+                  stroke="white"
+                  stroke-width="1.82857"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M18.6666 21.5239C19.1927 21.5239 19.6191 21.0975 19.6191 20.5715C19.6191 20.0455 19.1927 19.6191 18.6666 19.6191C18.1407 19.6191 17.7143 20.0455 17.7143 20.5715C17.7143 21.0975 18.1407 21.5239 18.6666 21.5239Z"
+                  stroke="white"
+                  stroke-width="1.82857"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M2.5238 2.52344H4.42857L6.9619 14.7141C7.05483 15.1473 7.29587 15.5345 7.64353 15.8091C7.99119 16.0838 8.42371 16.2287 8.86666 16.2189H18.1809C18.6144 16.2182 19.0347 16.0696 19.3725 15.7977C19.7101 15.5258 19.9449 15.147 20.0381 14.7235L22 6.76155H5.33624"
+                  stroke="white"
+                  stroke-width="1.82857"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span class="badge">0</span>
+            </button>
+            <div class="account-box desktop-only">
+              <button class="icon-circle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 10C14.2091 10 16 8.20914 16 6C16 3.79086 14.2091 2 12 2C9.79086 2 8 3.79086 8 6C8 8.20914 9.79086 10 12 10Z"
+                    stroke="white"
+                    stroke-width="1.6"
+                  />
+                  <path
+                    d="M2.40002 21.9992C2.17911 21.9992 1.99894 21.82 2.01034 21.5993C2.12336 19.4109 3.16097 17.3325 4.92895 15.7767C6.80432 14.1263 9.34785 13.1992 12 13.1992C14.6522 13.1992 17.1957 14.1263 19.0711 15.7767C20.8391 17.3325 21.8767 19.4109 21.9897 21.5993C22.0011 21.82 21.8209 21.9992 21.6 21.9992H12H2.40002Z"
+                    stroke="white"
+                    stroke-width="1.6"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <div class="account-text">
+                <span class="sign-in">Đỗ Đình An</span>
+                <span class="acc-name">Account</span>
+              </div>
             </div>
+          </div>
         </div>
-        <div class="header-bottom">
-            <div class="container header-bottom-container">
-                <button class="category-btn" onclick="toggleMobileMenu()">
-                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3.66663 11H18.3333" stroke="black" stroke-width="1.375" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.66663 5.5H18.3333" stroke="black" stroke-width="1.375" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.66663 16.5H18.3333" stroke="black" stroke-width="1.375" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    <span class="desktop-only">Danh mục sản phẩm</span>
-                </button>
-                <nav class="nav-links desktop-only">
-                    <a href="../index.html" class="nav-item">Trang chủ</a>
-                    <div class="nav-divider"></div>
-                    <a href="#" class="nav-item">Sản phẩm</a>
-                    <div class="nav-divider"></div>
-                    <a href="#" class="nav-item">Khuyến mãi</a>
-                    <div class="nav-divider"></div>
-                    <a href="tat-ca.html" class="nav-item" style="color: #6FDD00;">Đơn mua</a>
-                </nav>
-                <div class="best-seller">
-                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M17.4167 4.58398L4.58333 17.4173" stroke="black" stroke-width="1.375" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.95834 8.24935C7.22399 8.24935 8.25001 7.22334 8.25001 5.95768C8.25001 4.69203 7.22399 3.66602 5.95834 3.66602C4.69269 3.66602 3.66667 4.69203 3.66667 5.95768C3.66667 7.22334 4.69269 8.24935 5.95834 8.24935Z" stroke="black" stroke-width="1.375" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.0417 18.3333C17.3073 18.3333 18.3333 17.3073 18.3333 16.0417C18.3333 14.776 17.3073 13.75 16.0417 13.75C14.776 13.75 13.75 14.776 13.75 16.0417C13.75 17.3073 14.776 18.3333 16.0417 18.3333Z" stroke="black" stroke-width="1.375" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    <span>Best Seller</span>
-                    <span class="sale-badge">Sale</span>
-                </div>
-            </div>
-            <div class="mobile-menu" id="mobileMenu">
-                <a href="../index.html">Trang chủ</a>
-                <a href="#">Sản phẩm</a>
-                <a href="#">Khuyến mãi</a>
-                <a href="tat-ca.html">Đơn mua</a>
-            </div>
+      </div>
+      <div class="header-bottom">
+        <div class="container header-bottom-container">
+          <button class="category-btn" onclick="toggleMobileMenu()">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <path
+                d="M3.66663 11H18.3333"
+                stroke="black"
+                stroke-width="1.375"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M3.66663 5.5H18.3333"
+                stroke="black"
+                stroke-width="1.375"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M3.66663 16.5H18.3333"
+                stroke="black"
+                stroke-width="1.375"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span class="desktop-only">Danh mục sản phẩm</span>
+          </button>
+          <nav class="nav-links desktop-only">
+            <a href="../index.html" class="nav-item">Trang chủ</a>
+            <div class="nav-divider"></div>
+            <a href="#" class="nav-item">Sản phẩm</a>
+            <div class="nav-divider"></div>
+            <a href="#" class="nav-item">Khuyến mãi</a>
+            <div class="nav-divider"></div>
+            <a href="tat-ca.html" class="nav-item" style="color: #6fdd00"
+              >Đơn mua</a
+            >
+          </nav>
+          <div class="best-seller">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <path
+                d="M17.4167 4.58398L4.58333 17.4173"
+                stroke="black"
+                stroke-width="1.375"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M5.95834 8.24935C7.22399 8.24935 8.25001 7.22334 8.25001 5.95768C8.25001 4.69203 7.22399 3.66602 5.95834 3.66602C4.69269 3.66602 3.66667 4.69203 3.66667 5.95768C3.66667 7.22334 4.69269 8.24935 5.95834 8.24935Z"
+                stroke="black"
+                stroke-width="1.375"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M16.0417 18.3333C17.3073 18.3333 18.3333 17.3073 18.3333 16.0417C18.3333 14.776 17.3073 13.75 16.0417 13.75C14.776 13.75 13.75 14.776 13.75 16.0417C13.75 17.3073 14.776 18.3333 16.0417 18.3333Z"
+                stroke="black"
+                stroke-width="1.375"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span>Best Seller</span>
+            <span class="sale-badge">Sale</span>
+          </div>
         </div>
+        <div class="mobile-menu" id="mobileMenu">
+          <a href="../index.html">Trang chủ</a>
+          <a href="#">Sản phẩm</a>
+          <a href="#">Khuyến mãi</a>
+          <a href="tat-ca.html">Đơn mua</a>
+        </div>
+      </div>
     </header>
 
-    <main class="page-main container" style="padding-top: 20px; padding-bottom: 50px;">
-        <div class="breadcrumbs" style="font-size: 13px; margin-bottom: 20px;">
-            Trang chủ &nbsp;&gt;&nbsp; Đơn hàng &nbsp;&gt;&nbsp; <strong>Đơn mua</strong>
-        </div>
-        <h1 class="page-title" style="font-size: 28px; font-weight: 800; margin-bottom: 30px;">Đơn mua</h1>
+    <main
+      class="page-main container"
+      style="padding-top: 20px; padding-bottom: 50px"
+    >
+      <div class="breadcrumbs" style="font-size: 13px; margin-bottom: 20px">
+        Trang chủ &nbsp;&gt;&nbsp; Đơn hàng &nbsp;&gt;&nbsp;
+        <strong>Đơn mua</strong>
+      </div>
+      <h1
+        class="page-title"
+        style="font-size: 28px; font-weight: 800; margin-bottom: 30px"
+      >
+        Đơn mua
+      </h1>
 
-        <!-- Tab "Hoàn thành" active -->
-        <div class="order-tabs">
-            <a href="tat-ca.html"     class="tab-btn">Tất cả</a>
-            <a href="index.html"      class="tab-btn">Chờ vận chuyển</a>
-            <a href="#"               class="tab-btn">Vận chuyển</a>
-            <a href="hoan-thanh.html" class="tab-btn active">Hoàn thành</a>
-            <a href="#"               class="tab-btn">Đã hủy</a>
-        </div>
+      <!-- Tab "Hoàn thành" active -->
+      <div class="order-tabs">
+        <a href="tatca.html" class="tab-btn">Tất cả</a>
+        <a href="index.html" class="tab-btn">Chờ vận chuyển</a>
+        <a href="#" class="tab-btn">Vận chuyển</a>
+        <a href="hoanthanh.html" class="tab-btn active">Hoàn thành</a>
+        <a href="#" class="tab-btn">Đã hủy</a>
+      </div>
 
-        <div class="order-list">
-
-            <!-- ĐƠN HOÀN THÀNH -->
-            <div class="order-card">
-                <div class="order-header">
-                    <span class="order-id">Mã đơn hàng: DEF456</span>
-                    <span class="order-status" style="font-weight: 600;">Hoàn thành</span>
+      <div class="order-list">
+        <!-- ĐƠN HOÀN THÀNH -->
+        <div class="order-card">
+          <div class="order-header">
+            <span class="order-id">Mã đơn hàng: DEF456</span>
+            <span class="order-status" style="font-weight: 600"
+              >Hoàn thành</span
+            >
+          </div>
+          <div class="order-items">
+            <div class="item-row">
+              <div class="item-left">
+                <img
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/ec8380e1ed0affe3bda3647b4ba0b33b3f86cd3d?width=750"
+                  alt="Sản phẩm"
+                  class="item-img"
+                />
+                <div class="item-info">
+                  <div class="item-name">Giày Chạy Bộ Nam HOKA</div>
+                  <div class="item-variant">Size: 40 | Màu: Đen</div>
                 </div>
-                <div class="order-items">
-                    <div class="item-row">
-                        <div class="item-left">
-                            <img src="https://api.builder.io/api/v1/image/assets/TEMP/ec8380e1ed0affe3bda3647b4ba0b33b3f86cd3d?width=750" alt="Sản phẩm" class="item-img">
-                            <div class="item-info">
-                                <div class="item-name">Giày Chạy Bộ Nam HOKA</div>
-                                <div class="item-variant">Size: 40 | Màu: Đen</div>
-                            </div>
-                        </div>
-                        <div class="item-right">
-                            <span class="item-price">1.500.000đ</span>
-                            <span class="item-qty">x2</span>
-                            <span class="item-total">1.500.000đ</span>
-                        </div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-left">
-                            <img src="https://api.builder.io/api/v1/image/assets/TEMP/db7e5a8846c692ed0c7adb33f4e7afff356b8965?width=752" alt="Sản phẩm" class="item-img">
-                            <div class="item-info">
-                                <div class="item-name">Giày Chạy Bộ Nam HOKA</div>
-                                <div class="item-variant">Size: 41 | Màu: Trắng</div>
-                            </div>
-                        </div>
-                        <div class="item-right">
-                            <span class="item-price">1.050.000đ</span>
-                            <span class="item-qty">x1</span>
-                            <span class="item-total">1.050.000đ</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="order-footer">
-                    <div class="footer-left">Đã nhận hàng ngày 25/05/2026</div>
-                    <div class="footer-right">
-                        <div class="total-section">
-                            <span>Tổng thanh toán:</span>
-                            <span class="total-price" style="color: #6FDD00;">2.585.000đ</span>
-                        </div>
-                        <div class="action-buttons">
-                            <!-- Hoàn thành → không có nút hủy, chỉ Đánh giá + Liên hệ -->
-                            <button class="btn-cancel">Đánh giá</button>
-                            <button class="btn-contact">Liên hệ người bán</button>
-                        </div>
-                    </div>
-                </div>
+              </div>
+              <div class="item-right">
+                <span class="item-price">1.500.000đ</span>
+                <span class="item-qty">x2</span>
+                <span class="item-total">1.500.000đ</span>
+              </div>
             </div>
-
+            <div class="item-row">
+              <div class="item-left">
+                <img
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/db7e5a8846c692ed0c7adb33f4e7afff356b8965?width=752"
+                  alt="Sản phẩm"
+                  class="item-img"
+                />
+                <div class="item-info">
+                  <div class="item-name">Giày Chạy Bộ Nam HOKA</div>
+                  <div class="item-variant">Size: 41 | Màu: Trắng</div>
+                </div>
+              </div>
+              <div class="item-right">
+                <span class="item-price">1.050.000đ</span>
+                <span class="item-qty">x1</span>
+                <span class="item-total">1.050.000đ</span>
+              </div>
+            </div>
+          </div>
+          <div class="order-footer">
+            <div class="footer-left">Đã nhận hàng ngày 25/05/2026</div>
+            <div class="footer-right">
+              <div class="total-section">
+                <span>Tổng thanh toán:</span>
+                <span class="total-price" style="color: #6fdd00"
+                  >2.585.000đ</span
+                >
+              </div>
+              <div class="action-buttons">
+                <!-- Hoàn thành → không có nút hủy, chỉ Đánh giá + Liên hệ -->
+                <button class="btn-cancel">Đánh giá</button>
+                <button class="btn-contact">Liên hệ người bán</button>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
 
     <footer>
-        <img class="full-width-image" style="margin-bottom:0;width:100%;height:auto;display:block;" src="https://api.builder.io/api/v1/image/assets/TEMP/93c7ab102fbe821b0d46bf27e85750c240bd94de?width=3810" alt="Footer LLA Store">
+      <img
+        class="full-width-image"
+        style="margin-bottom: 0; width: 100%; height: auto; display: block"
+        src="https://api.builder.io/api/v1/image/assets/TEMP/93c7ab102fbe821b0d46bf27e85750c240bd94de?width=3810"
+        alt="Footer LLA Store"
+      />
     </footer>
 
     <script>
-        function toggleMobileMenu() {
-            document.getElementById('mobileMenu').classList.toggle('active');
-        }
+      function toggleMobileMenu() {
+        document.getElementById("mobileMenu").classList.toggle("active");
+      }
     </script>
-</body>
+  </body>
 </html>
